@@ -1,0 +1,19 @@
+services:
+  comfyui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: comfyui
+    ports:
+      - "8188:8188"
+    env_file:
+      - ../.env
+    volumes:
+      # Persist outputs, inputs, and models
+      - ../data/output:/app/output
+      - ../data/input:/app/input
+      - ../data/models:/app/models
+      # Persist database
+      - ../data/comfyui.db:/app/comfyui.db
+    restart: unless-stopped
+    network_mode: bridge

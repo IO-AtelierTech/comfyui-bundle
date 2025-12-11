@@ -1,0 +1,15 @@
+[submodule "comfyui"]
+	path = comfyui
+	url = https://github.com/comfyanonymous/ComfyUI.git
+[submodule "plugins/ComfyUI-fal-Connector"]
+	path = plugins/ComfyUI-fal-Connector
+	url = https://github.com/badayvedat/ComfyUI-fal-Connector.git
+[submodule "plugins/ComfyUI-TextOverlay"]
+	path = plugins/ComfyUI-TextOverlay
+	url = https://github.com/Munkyfoot/ComfyUI-TextOverlay.git
+[submodule "plugins/ComfyUI-Custom-Scripts"]
+	path = plugins/ComfyUI-Custom-Scripts
+	url = https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
+[submodule "mcp"]
+	path = mcp
+	url = https://github.com/DanEscher98/comfy-mcp-server.git
