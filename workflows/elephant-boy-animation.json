@@ -1,8 +1,8 @@
 {
   "version": 1,
   "state": {
-    "lastNodeId": 9,
-    "lastLinkId": 7,
+    "lastNodeId": 10,
+    "lastLinkId": 8,
     "lastGroupId": 0,
     "lastRerouteId": 0
   },
@@ -124,9 +124,47 @@
     },
     {
       "id": 4,
-      "type": "ViduStartEndToVideoNode",
+      "type": "LoadImage",
       "pos": [
         100.0,
+        300.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elephantkid-frontal.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ViduStartEndToVideoNode",
+      "pos": [
+        550.0,
         300.0
       ],
       "size": [
@@ -140,7 +178,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 3,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -161,7 +199,7 @@
           "name": "output",
           "type": "*",
           "links": [
-            5
+            6
           ],
           "slot_index": 0
         }
@@ -179,55 +217,8 @@
       ]
     },
     {
-      "id": 5,
-      "type": "MinimaxImageToVideoNode",
-      "pos": [
-        550.0,
-        300.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "*",
-          "link": 3,
-          "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            6
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MinimaxImageToVideoNode"
-      },
-      "widgets_values": [
-        "Slow cinematic zoom into bottom left corner of Van Gogh Starry Night miniature painting, grass gains detail and depth, swirling Van Gogh brushstroke texture becomes alive, clay elephant boy gradually appears emerging from the painted grass, maintaining plastic 3D relief texture of miniature souvenir throughout",
-        "I2V-01-Director",
-        0
-      ]
-    },
-    {
       "id": 6,
-      "type": "KlingImage2VideoNode",
+      "type": "MinimaxImageToVideoNode",
       "pos": [
         1000.0,
         300.0
@@ -247,9 +238,9 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "start_frame",
+          "name": "image",
           "type": "*",
-          "link": 4,
+          "link": 3,
           "slot_index": 0
         }
       ],
@@ -264,21 +255,17 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "KlingImage2VideoNode"
+        "Node name for S&R": "MinimaxImageToVideoNode"
       },
       "widgets_values": [
-        "Clay elephant boy turns head slowly from right side to look directly at camera, warm friendly smile appears on face, continues playing saxophone with gentle swaying motion, then looks back to the right, musical notes with handwritten sketch texture flow gracefully from saxophone bell, maintain clay plasticine texture throughout, Van Gogh swirling painted grass background, stop-motion clay animation style",
-        "realistic skin, smooth surface, CGI, 3D render, photorealistic, plastic sheen, glossy, digital art, blurry, low quality",
-        "kling-v2-master",
-        0.8,
-        "std",
-        "16:9",
-        "10"
+        "Slow cinematic zoom into bottom left corner of Van Gogh Starry Night miniature painting, grass gains detail and depth, swirling Van Gogh brushstroke texture becomes alive, clay elephant boy gradually appears emerging from the painted grass, maintaining plastic 3D relief texture of miniature souvenir throughout, elephant boy playing saxophone visible at the end",
+        "I2V-01-Director",
+        0
       ]
     },
     {
       "id": 7,
-      "type": "SaveVideo",
+      "type": "KlingStartEndFrameNode",
       "pos": [
         100.0,
         500.0
@@ -298,27 +285,37 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "video",
+          "name": "start_frame",
+          "type": "*",
+          "link": 4,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
           "type": "*",
           "link": 5,
-          "slot_index": 0
+          "slot_index": 1
         }
       ],
       "outputs": [
         {
           "name": "output",
           "type": "*",
-          "links": [],
+          "links": [
+            8
+          ],
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "SaveVideo"
+        "Node name for S&R": "KlingStartEndFrameNode"
       },
       "widgets_values": [
-        "elephant_boy/segment_01_arc",
-        "mp4",
-        "h264"
+        "Clay elephant boy turns head smoothly from right side profile to face camera directly, warm friendly smile, playing saxophone with gentle swaying motion, musical notes with handwritten sketch texture flow from saxophone bell, maintain clay plasticine stop-motion texture throughout, Van Gogh swirling painted grass background, warm lighting",
+        "realistic skin, smooth surface, CGI, 3D render, photorealistic, plastic sheen, glossy, digital art, blurry, low quality, morphing artifacts",
+        0.5,
+        "16:9",
+        "pro mode / 10s duration / kling-v2-1"
       ]
     },
     {
@@ -361,7 +358,7 @@
         "Node name for S&R": "SaveVideo"
       },
       "widgets_values": [
-        "elephant_boy/segment_02_zoom",
+        "elephant_boy/01_arc",
         "mp4",
         "h264"
       ]
@@ -406,7 +403,52 @@
         "Node name for S&R": "SaveVideo"
       },
       "widgets_values": [
-        "elephant_boy/segment_03_elephant",
+        "elephant_boy/02_zoom",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "SaveVideo",
+      "pos": [
+        100.0,
+        700.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 8,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "elephant_boy/03_elephant",
         "mp4",
         "h264"
       ]
@@ -417,7 +459,7 @@
       "id": 1,
       "origin_id": 1,
       "origin_slot": 0,
-      "target_id": 4,
+      "target_id": 5,
       "target_slot": 0,
       "type": "*"
     },
@@ -425,7 +467,7 @@
       "id": 2,
       "origin_id": 2,
       "origin_slot": 0,
-      "target_id": 4,
+      "target_id": 5,
       "target_slot": 1,
       "type": "*"
     },
@@ -433,7 +475,7 @@
       "id": 3,
       "origin_id": 2,
       "origin_slot": 0,
-      "target_id": 5,
+      "target_id": 6,
       "target_slot": 0,
       "type": "*"
     },
@@ -441,7 +483,7 @@
       "id": 4,
       "origin_id": 3,
       "origin_slot": 0,
-      "target_id": 6,
+      "target_id": 7,
       "target_slot": 0,
       "type": "*"
     },
@@ -450,7 +492,7 @@
       "origin_id": 4,
       "origin_slot": 0,
       "target_id": 7,
-      "target_slot": 0,
+      "target_slot": 1,
       "type": "*"
     },
     {
@@ -466,6 +508,14 @@
       "origin_id": 6,
       "origin_slot": 0,
       "target_id": 9,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 8,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 10,
       "target_slot": 0,
       "type": "*"
     }
