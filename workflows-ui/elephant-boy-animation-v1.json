@@ -1,8 +1,8 @@
 {
   "version": 1,
   "state": {
-    "lastNodeId": 10,
-    "lastLinkId": 9,
+    "lastNodeId": 12,
+    "lastLinkId": 11,
     "lastGroupId": 0,
     "lastRerouteId": 0
   },
@@ -89,7 +89,7 @@
       "type": "LoadImage",
       "pos": [
         100.0,
-        992.5
+        840.0
       ],
       "size": [
         320.0,
@@ -110,8 +110,7 @@
           "name": "output",
           "type": "*",
           "links": [
-            4,
-            7
+            4
           ],
           "slot_index": 0
         }
@@ -128,7 +127,7 @@
       "type": "LoadImage",
       "pos": [
         100.0,
-        1362.5
+        1210.0
       ],
       "size": [
         320.0,
@@ -149,7 +148,7 @@
           "name": "output",
           "type": "*",
           "links": [
-            8
+            10
           ],
           "slot_index": 0
         }
@@ -266,7 +265,7 @@
       "type": "ViduReferenceToVideo_fal",
       "pos": [
         520.0,
-        775.0
+        522.5
       ],
       "size": [
         300.0,
@@ -300,7 +299,8 @@
           "name": "output",
           "type": "*",
           "links": [
-            6
+            6,
+            7
           ],
           "slot_index": 0
         }
@@ -321,7 +321,7 @@
       "type": "SaveVideo",
       "pos": [
         920.0,
-        775.0
+        230.0
       ],
       "size": [
         300.0,
@@ -363,10 +363,10 @@
     },
     {
       "id": 9,
-      "type": "ViduReferenceToVideo_fal",
+      "type": "GetVideoComponents",
       "pos": [
-        520.0,
-        1450.0
+        920.0,
+        815.0
       ],
       "size": [
         300.0,
@@ -383,16 +383,10 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "reference_image",
+          "name": "video",
           "type": "*",
           "link": 7,
           "slot_index": 0
-        },
-        {
-          "name": "reference_image_2",
-          "type": "*",
-          "link": 8,
-          "slot_index": 1
         }
       ],
       "outputs": [
@@ -400,28 +394,21 @@
           "name": "output",
           "type": "*",
           "links": [
-            9
+            8
           ],
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "ViduReferenceToVideo_fal"
-      },
-      "widgets_values": [
-        "Clay elephant boy figurine in profile view against swirling Van Gogh oil painting grass background. The charming character with grey elephant costume and big round ears is playing a golden saxophone. Slowly, he turns his head toward the camera, revealing a warm friendly smile as he continues playing. His clay plasticine texture catches the warm lighting beautifully. Handwritten musical notes with sketch-like ink texture float and dance from the saxophone bell, swirling upward in playful spirals. After a brief moment of eye contact with the viewer, he turns back to look at the right, continuing his melodic performance. The Van Gogh grass brushstrokes continue their gentle swirling motion throughout.",
-        "16:9",
-        "medium",
-        false,
-        42
-      ]
+        "Node name for S&R": "GetVideoComponents"
+      }
     },
     {
       "id": 10,
-      "type": "SaveVideo",
+      "type": "ImageFromBatch",
       "pos": [
-        920.0,
-        1450.0
+        1320.0,
+        815.0
       ],
       "size": [
         300.0,
@@ -438,9 +425,110 @@
       "mode": 0,
       "inputs": [
         {
-          "name": "video",
+          "name": "image",
+          "type": "*",
+          "link": 8,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch"
+      },
+      "widgets_values": [
+        90,
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": "ViduReferenceToVideo_fal",
+      "pos": [
+        1720.0,
+        815.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "reference_image",
           "type": "*",
           "link": 9,
+          "slot_index": 0
+        },
+        {
+          "name": "reference_image_2",
+          "type": "*",
+          "link": 10,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ViduReferenceToVideo_fal"
+      },
+      "widgets_values": [
+        "Clay elephant boy figurine in profile view against swirling Van Gogh oil painting grass background. The charming character with grey elephant costume and big round ears is playing a golden saxophone. Slowly, he turns his head toward the camera, revealing a warm friendly smile as he continues playing. His clay plasticine texture catches the warm lighting beautifully. Handwritten musical notes with sketch-like ink texture float and dance from the saxophone bell, swirling upward in playful spirals. After a brief moment of eye contact with the viewer, he turns back to look at the right, continuing his melodic performance. The Van Gogh grass brushstrokes continue their gentle swirling motion throughout.",
+        "16:9",
+        "medium",
+        false,
+        42
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveVideo",
+      "pos": [
+        2120.0,
+        815.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 11,
           "slot_index": 0
         }
       ],
@@ -513,7 +601,7 @@
     },
     {
       "id": 7,
-      "origin_id": 3,
+      "origin_id": 7,
       "origin_slot": 0,
       "target_id": 9,
       "target_slot": 0,
@@ -521,17 +609,33 @@
     },
     {
       "id": 8,
-      "origin_id": 4,
+      "origin_id": 9,
       "origin_slot": 0,
-      "target_id": 9,
-      "target_slot": 1,
+      "target_id": 10,
+      "target_slot": 0,
       "type": "*"
     },
     {
       "id": 9,
-      "origin_id": 9,
+      "origin_id": 10,
       "origin_slot": 0,
-      "target_id": 10,
+      "target_id": 11,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 10,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 11,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 11,
+      "origin_id": 11,
+      "origin_slot": 0,
+      "target_id": 12,
       "target_slot": 0,
       "type": "*"
     }

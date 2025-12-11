@@ -84,11 +84,31 @@
     }
   },
   "9": {
+    "class_type": "GetVideoComponents",
+    "inputs": {
+      "video": [
+        "7",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "9",
+        0
+      ],
+      "batch_index": 90,
+      "length": 1
+    }
+  },
+  "11": {
     "class_type": "ViduReferenceToVideo_fal",
     "inputs": {
       "prompt": "Clay elephant boy figurine in profile view against swirling Van Gogh oil painting grass background. The charming character with grey elephant costume and big round ears is playing a golden saxophone. Slowly, he turns his head toward the camera, revealing a warm friendly smile as he continues playing. His clay plasticine texture catches the warm lighting beautifully. Handwritten musical notes with sketch-like ink texture float and dance from the saxophone bell, swirling upward in playful spirals. After a brief moment of eye contact with the viewer, he turns back to look at the right, continuing his melodic performance. The Van Gogh grass brushstrokes continue their gentle swirling motion throughout.",
       "reference_image": [
-        "3",
+        "10",
         0
       ],
       "reference_image_2": [
@@ -101,11 +121,11 @@
       "seed": 42
     }
   },
-  "10": {
+  "12": {
     "class_type": "SaveVideo",
     "inputs": {
       "video": [
-        "9",
+        "11",
         0
       ],
       "filename_prefix": "elephant_boy_v1/03_turn_smile",
