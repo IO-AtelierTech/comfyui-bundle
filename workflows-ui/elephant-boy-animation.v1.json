@@ -1,9 +1,9 @@
 {
   "version": 1,
   "state": {
-    "lastNodeId": 12,
-    "lastLinkId": 11,
-    "lastGroupId": 3,
+    "lastNodeId": 10,
+    "lastLinkId": 9,
+    "lastGroupId": 4,
     "lastRerouteId": 0
   },
   "nodes": [
@@ -87,17 +87,17 @@
     },
     {
       "id": 6,
-      "type": "VHS_VideoCombine",
+      "type": "SaveVideo",
       "pos": [1300, 100],
-      "size": [320, 290],
+      "size": [300, 130],
       "flags": {},
       "order": 5,
       "mode": 0,
-      "inputs": [{"name": "images", "type": "IMAGE", "link": 4}],
-      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": []}],
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 4}],
+      "outputs": [],
       "title": "Save: 01_arc_zoom",
-      "properties": {"Node name for S&R": "VHS_VideoCombine"},
-      "widgets_values": ["elephant_boy_v1/01_arc_zoom", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
+      "properties": {"Node name for S&R": "SaveVideo"},
+      "widgets_values": ["elephant_boy_v1/01_arc_zoom", "mp4", "h264"]
     },
     {
       "id": 7,
@@ -127,17 +127,17 @@
     },
     {
       "id": 8,
-      "type": "VHS_VideoCombine",
+      "type": "SaveVideo",
       "pos": [1300, 500],
-      "size": [320, 290],
+      "size": [300, 130],
       "flags": {},
       "order": 7,
       "mode": 0,
-      "inputs": [{"name": "images", "type": "IMAGE", "link": 6}],
-      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": []}],
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 6}],
+      "outputs": [],
       "title": "Save: 02_emerge",
-      "properties": {"Node name for S&R": "VHS_VideoCombine"},
-      "widgets_values": ["elephant_boy_v1/02_emerge", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
+      "properties": {"Node name for S&R": "SaveVideo"},
+      "widgets_values": ["elephant_boy_v1/02_emerge", "mp4", "h264"]
     },
     {
       "id": 9,
@@ -167,17 +167,17 @@
     },
     {
       "id": 10,
-      "type": "VHS_VideoCombine",
+      "type": "SaveVideo",
       "pos": [1300, 950],
-      "size": [320, 290],
+      "size": [300, 130],
       "flags": {},
       "order": 9,
       "mode": 0,
-      "inputs": [{"name": "images", "type": "IMAGE", "link": 9}],
-      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": []}],
+      "inputs": [{"name": "video", "type": "VIDEO", "link": 9}],
+      "outputs": [],
       "title": "Save: 03_turn_smile",
-      "properties": {"Node name for S&R": "VHS_VideoCombine"},
-      "widgets_values": ["elephant_boy_v1/03_turn_smile", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
+      "properties": {"Node name for S&R": "SaveVideo"},
+      "widgets_values": ["elephant_boy_v1/03_turn_smile", "mp4", "h264"]
     }
   ],
   "links": [
@@ -202,24 +202,24 @@
     },
     {
       "id": 2,
-      "title": "Segment 1: Arc Zoom (Bookshelf → Painting Frontal)",
-      "bounding": [780, 50, 880, 400],
+      "title": "Segment 1: Arc Zoom (Bookshelf -> Painting Frontal)",
+      "bounding": [780, 50, 860, 400],
       "color": "#8A8A3A",
       "font_size": 24,
       "flags": {}
     },
     {
       "id": 3,
-      "title": "Segment 2: Emerge (Zoom Grass → Elephant Boy Appears)",
-      "bounding": [780, 460, 880, 440],
+      "title": "Segment 2: Emerge (Zoom Grass -> Elephant Boy Appears)",
+      "bounding": [780, 460, 860, 440],
       "color": "#3A8A3A",
       "font_size": 24,
       "flags": {}
     },
     {
       "id": 4,
-      "title": "Segment 3: Character (Turn Head → Smile → Musical Notes)",
-      "bounding": [780, 910, 880, 440],
+      "title": "Segment 3: Character (Turn Head -> Smile -> Musical Notes)",
+      "bounding": [780, 910, 860, 440],
       "color": "#8A3A3A",
       "font_size": 24,
       "flags": {}
@@ -229,7 +229,7 @@
     "ds": {"scale": 0.7, "offset": [50, 50]},
     "info": {
       "name": "Elephant Boy Animation v1",
-      "description": "Three-segment animation: Arc zoom around Van Gogh miniature, elephant boy emerges from grass, character turns and plays saxophone with musical notes",
+      "description": "Three-segment animation using fal.ai: Arc zoom around Van Gogh miniature, elephant boy emerges from grass, character turns and plays saxophone with musical notes",
       "author": "Claude Code",
       "version": "1.0"
     }
