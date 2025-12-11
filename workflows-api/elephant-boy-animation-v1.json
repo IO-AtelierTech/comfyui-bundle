@@ -1,0 +1,116 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ministarrynight_shelve-leftside.JPG"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ministarrynight_shelve-frontal.JPG"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "elephantkid-rightside.JPG"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "elephantkid-frontal.JPG"
+    }
+  },
+  "5": {
+    "class_type": "LumaImageToVideo_fal",
+    "inputs": {
+      "prompt": "Smooth cinematic camera arc movement around a miniature Van Gogh Starry Night 3D relief painting souvenir displayed on a cozy wooden bookshelf. The camera gracefully rotates from the left side view while simultaneously zooming in, following the contours of the textured painting. Warm ambient lighting highlights the plastic relief texture and swirling brushstroke details. The painting gradually fills the entire frame as the camera settles on a direct frontal view. Shallow depth of field, soft bokeh from bookshelf items in background.",
+      "first_image": [
+        "1",
+        0
+      ],
+      "last_image": [
+        "2",
+        0
+      ],
+      "aspect_ratio": "16:9",
+      "duration": "5s",
+      "loop": false,
+      "seed": 42
+    }
+  },
+  "6": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "5",
+        0
+      ],
+      "filename_prefix": "elephant_boy_v1/01_arc_zoom",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  },
+  "7": {
+    "class_type": "ViduReferenceToVideo_fal",
+    "inputs": {
+      "prompt": "Extreme close-up of Van Gogh Starry Night miniature painting, camera slowly zooms into the bottom left corner focusing on the swirling green grass area. The thick impasto brushstrokes of the grass begin to move and breathe with life. From within the painted grass, a small clay elephant boy figurine gradually emerges - a vintage ceramic character wearing a grey elephant costume with oversized round ears, holding a golden saxophone. The figurine has a charming stop-motion clay texture that blends seamlessly with the Van Gogh oil painting style grass. Warm golden lighting, dreamy atmosphere, the grass continues its swirling Van Gogh motion around the emerging character.",
+      "reference_image": [
+        "3",
+        0
+      ],
+      "reference_image_2": [
+        "2",
+        0
+      ],
+      "aspect_ratio": "16:9",
+      "movement_amplitude": "medium",
+      "bgm": false,
+      "seed": 42
+    }
+  },
+  "8": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "7",
+        0
+      ],
+      "filename_prefix": "elephant_boy_v1/02_emerge",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  },
+  "9": {
+    "class_type": "ViduReferenceToVideo_fal",
+    "inputs": {
+      "prompt": "Clay elephant boy figurine in profile view against swirling Van Gogh oil painting grass background. The charming character with grey elephant costume and big round ears is playing a golden saxophone. Slowly, he turns his head toward the camera, revealing a warm friendly smile as he continues playing. His clay plasticine texture catches the warm lighting beautifully. Handwritten musical notes with sketch-like ink texture float and dance from the saxophone bell, swirling upward in playful spirals. After a brief moment of eye contact with the viewer, he turns back to look at the right, continuing his melodic performance. The Van Gogh grass brushstrokes continue their gentle swirling motion throughout.",
+      "reference_image": [
+        "3",
+        0
+      ],
+      "reference_image_2": [
+        "4",
+        0
+      ],
+      "aspect_ratio": "16:9",
+      "movement_amplitude": "medium",
+      "bgm": false,
+      "seed": 42
+    }
+  },
+  "10": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "9",
+        0
+      ],
+      "filename_prefix": "elephant_boy_v1/03_turn_smile",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  }
+}
