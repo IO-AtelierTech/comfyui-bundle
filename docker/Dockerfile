@@ -1,8 +1,46 @@
-FROM python:3.11-slim
+# =============================================================================
+# Stage 1: Dependencies Builder
+# =============================================================================
+FROM python:3.11-slim AS deps-builder
+
+WORKDIR /build
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install PyTorch CPU-only (largest dependency, cached separately)
+RUN pip install --no-cache-dir \
+    torch \
+    torchvision \
+    torchaudio \
+    --index-url https://download.pytorch.org/whl/cpu
+
+# Copy ONLY requirements files (not full directories) for better caching
+# These layers only invalidate when requirements.txt changes
+COPY comfyui/requirements.txt /tmp/comfyui-requirements.txt
+RUN pip install --no-cache-dir -r /tmp/comfyui-requirements.txt
+
+# Copy plugin requirements files (only for plugins that have them)
+# Each COPY creates a layer - changes to plugin code won't invalidate these
+COPY plugins/ComfyUI-fal-Connector/requirements.txt /tmp/fal-connector-requirements.txt
+COPY plugins/ComfyUI-FFmpeg/requirements.txt /tmp/ffmpeg-requirements.txt
+
+# Install all plugin requirements
+RUN pip install --no-cache-dir \
+    -r /tmp/fal-connector-requirements.txt \
+    -r /tmp/ffmpeg-requirements.txt \
+    || true
+
+# =============================================================================
+# Stage 2: Runtime Image
+# =============================================================================
+FROM python:3.11-slim AS runtime
 
 WORKDIR /app
 
-# Install system dependencies
+# Install runtime system dependencies only
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     ffmpeg \
@@ -13,34 +51,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install PyTorch CPU-only first (separate layer for caching)
-RUN pip install --no-cache-dir \
-    torch \
-    torchvision \
-    torchaudio \
-    --index-url https://download.pytorch.org/whl/cpu
-
-# Copy ComfyUI requirements and install
-COPY comfyui/requirements.txt /tmp/comfyui-requirements.txt
-RUN pip install --no-cache-dir -r /tmp/comfyui-requirements.txt
-
-# Copy plugin requirements and install (if they exist)
-COPY plugins/ /tmp/plugins/
-RUN for req in /tmp/plugins/*/requirements.txt; do \
-        if [ -f "$req" ]; then \
-            echo "Installing requirements from $req"; \
-            pip install --no-cache-dir -r "$req" || true; \
-        fi; \
-    done && rm -rf /tmp/plugins
-
-# Copy ComfyUI application
-COPY comfyui/ /app/
-
-# Copy all plugins into custom_nodes/
-COPY plugins/ /app/custom_nodes/
+# Copy installed packages from builder
+COPY --from=deps-builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=deps-builder /usr/local/bin /usr/local/bin
 
 # Create directories for persistence
 RUN mkdir -p /app/output /app/input /app/models
+
+# Copy ComfyUI application (changes more frequently than deps)
+COPY comfyui/ /app/
+
+# Copy all plugins into custom_nodes/ (changes most frequently)
+COPY plugins/ /app/custom_nodes/
 
 # Expose port
 EXPOSE 8188

@@ -1,9 +1,6 @@
 [submodule "comfyui"]
 	path = comfyui
 	url = https://github.com/comfyanonymous/ComfyUI.git
-[submodule "plugins/ComfyUI-fal-Connector"]
-	path = plugins/ComfyUI-fal-Connector
-	url = https://github.com/badayvedat/ComfyUI-fal-Connector.git
 [submodule "plugins/ComfyUI-TextOverlay"]
 	path = plugins/ComfyUI-TextOverlay
 	url = https://github.com/Munkyfoot/ComfyUI-TextOverlay.git
@@ -16,3 +13,6 @@
 [submodule "plugins/ComfyUI-FFmpeg"]
 	path = plugins/ComfyUI-FFmpeg
 	url = https://github.com/MoonHugo/ComfyUI-FFmpeg.git
+[submodule "plugins/ComfyUI-fal-Connector"]
+	path = plugins/ComfyUI-fal-Connector
+	url = https://github.com/DanEscher98/ComfyUI-fal-Connector.git
