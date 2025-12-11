@@ -2,10 +2,18 @@
   "mcpServers": {
     "comfyui": {
       "command": "uv",
-      "args": ["--directory", "/home/danyiel/Packages/ComfyUI/comfyui-setup/mcp", "run", "comfy-mcp-server"],
+      "args": [
+        "--directory",
+        "/home/danyiel/Packages/ComfyUI/comfyui-setup/mcp",
+        "run",
+        "comfy-mcp-server"
+      ],
       "env": {
         "COMFY_URL": "http://localhost:8188"
       }
+    },
+    "fal": {
+      "url": "https://docs.fal.ai/mcp"
     }
   }
 }

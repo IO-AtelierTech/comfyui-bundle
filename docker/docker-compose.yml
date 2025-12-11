@@ -15,5 +15,7 @@ services:
       - ../data/models:/app/models
       # Persist database
       - ../data/comfyui.db:/app/comfyui.db
+      # Share workflows with ComfyUI UI
+      - ../workflows:/app/user/default/workflows
     restart: unless-stopped
     network_mode: bridge

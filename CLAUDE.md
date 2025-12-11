@@ -121,3 +121,4 @@ See `docs/issues/` for tracked problems and workarounds.
 | ComfyUI-fal-Connector | Cloud GPU inference | Requires FAL_KEY |
 | ComfyUI-TextOverlay | Text on images | No extra deps |
 | ComfyUI-Custom-Scripts | UI improvements | Quality of life |
+- each time you're using/testing comfyui mcp, if you hit an error, debug it, fix it (if possible), and update rules so this doesn't happen again. Bonus points if you enhace the code at the mcp[
