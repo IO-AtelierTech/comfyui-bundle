@@ -13,3 +13,6 @@
 [submodule "mcp"]
 	path = mcp
 	url = https://github.com/DanEscher98/comfy-mcp-server.git
+[submodule "plugins/ComfyUI-FFmpeg"]
+	path = plugins/ComfyUI-FFmpeg
+	url = https://github.com/MoonHugo/ComfyUI-FFmpeg.git

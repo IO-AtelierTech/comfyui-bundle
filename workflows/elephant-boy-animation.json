@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "state": {
+    "lastNodeId": 10,
+    "lastLinkId": 7,
+    "lastGroupId": 0,
+    "lastRerouteId": 0
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        100.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ministarrynight_shelve-leftside.JPG"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        550.0,
+        100.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            2,
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ministarrynight_shelve-frontal.JPG"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        1000.0,
+        100.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elephantkid-rightside.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        300.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elephantkid-frontal.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ViduStartEndToVideoNode",
+      "pos": [
+        550.0,
+        300.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "*",
+          "link": 1,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
+          "type": "*",
+          "link": 2,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ViduStartEndToVideoNode"
+      },
+      "widgets_values": [
+        "viduq1",
+        "Smooth camera arc movement around a miniature Van Gogh Starry Night painting souvenir on a bookshelf, zooming in gradually, painting fills the screen, warm cozy lighting, plastic 3D relief texture of miniature souvenir",
+        5,
+        0,
+        "1080p",
+        "medium"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "MinimaxImageToVideoNode",
+      "pos": [
+        1000.0,
+        300.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "*",
+          "link": 3,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MinimaxImageToVideoNode"
+      },
+      "widgets_values": [
+        "Slow cinematic zoom into bottom left corner of Van Gogh Starry Night miniature painting, grass gains detail and depth, swirling Van Gogh brushstroke texture becomes alive, clay elephant boy gradually appears emerging from the painted grass, maintaining plastic 3D relief texture of miniature souvenir throughout",
+        "I2V-01-Director",
+        0
+      ]
+    },
+    {
+      "id": 7,
+      "type": "KlingImage2VideoNode",
+      "pos": [
+        100.0,
+        500.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "start_frame",
+          "type": "*",
+          "link": 4,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KlingImage2VideoNode"
+      },
+      "widgets_values": [
+        "Clay elephant boy turns head slowly from right side to look directly at camera, warm friendly smile appears on face, continues playing saxophone with gentle swaying motion, then looks back to the right, musical notes with handwritten sketch texture flow gracefully from saxophone bell, maintain clay plasticine texture throughout, Van Gogh swirling painted grass background, stop-motion clay animation style",
+        "realistic skin, smooth surface, CGI, 3D render, photorealistic, plastic sheen, glossy, digital art, blurry, low quality",
+        "kling-v2-master",
+        0.8,
+        "std",
+        "16:9",
+        "10"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "SaveVideo",
+      "pos": [
+        550.0,
+        500.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 5,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "elephant_boy/segment_01_arc",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveVideo",
+      "pos": [
+        1000.0,
+        500.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 6,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "elephant_boy/segment_02_zoom",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "SaveVideo",
+      "pos": [
+        100.0,
+        700.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 7,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "elephant_boy/segment_03_elephant",
+        "mp4",
+        "h264"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 5,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 2,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 5,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 3,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 6,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 4,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 5,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 8,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 6,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 7,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 0,
+      "type": "*"
+    }
+  ],
+  "groups": [],
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  }
+}
