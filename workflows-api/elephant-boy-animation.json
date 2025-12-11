@@ -1,0 +1,92 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ministarrynight_shelve-leftside.JPG"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ministarrynight_shelve-frontal.JPG"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "elephantkid-rightside.JPG"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "elephantkid-frontal.JPG"
+    }
+  },
+  "10": {
+    "class_type": "LumaImageToVideoNode",
+    "inputs": {
+      "prompt": "Smooth camera arc movement around a miniature Van Gogh Starry Night painting souvenir on a bookshelf, zooming in gradually, warm cozy lighting, plastic 3D relief texture",
+      "model": "ray-2",
+      "resolution": "720p",
+      "duration": "5s",
+      "loop": false,
+      "seed": 0,
+      "first_image": ["1", 0],
+      "last_image": ["2", 0]
+    }
+  },
+  "11": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": ["10", 0],
+      "filename_prefix": "elephant_boy/01_arc",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  },
+  "20": {
+    "class_type": "ViduReferenceVideoNode",
+    "inputs": {
+      "model": "viduq1",
+      "images": ["3", 0],
+      "prompt": "Slow cinematic zoom into Van Gogh Starry Night miniature painting grass area, clay elephant boy figurine gradually appears emerging from the painted grass, the elephant boy is a vintage ceramic figurine wearing grey elephant costume with big round ears, playing golden saxophone, maintain clay plasticine stop-motion texture, Van Gogh swirling brushstroke grass background, warm lighting",
+      "duration": 5,
+      "seed": 0,
+      "aspect_ratio": "16:9",
+      "resolution": "1080p",
+      "movement_amplitude": "medium"
+    }
+  },
+  "21": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": ["20", 0],
+      "filename_prefix": "elephant_boy/02_emerge",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  },
+  "30": {
+    "class_type": "LumaImageToVideoNode",
+    "inputs": {
+      "prompt": "Clay elephant boy figurine slowly rotates toward the camera, transitioning from side profile to facing viewer directly, warm friendly smile appears as he turns to greet the audience, continues playing saxophone with gentle swaying, vintage ceramic figurine texture, Van Gogh swirling painted grass background, warm cozy lighting",
+      "model": "ray-2",
+      "resolution": "720p",
+      "duration": "5s",
+      "loop": false,
+      "seed": 0,
+      "first_image": ["3", 0],
+      "last_image": ["4", 0]
+    }
+  },
+  "31": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": ["30", 0],
+      "filename_prefix": "elephant_boy/03_turn",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  }
+}
