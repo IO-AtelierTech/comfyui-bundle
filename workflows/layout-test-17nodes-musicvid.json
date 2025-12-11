@@ -1,0 +1,935 @@
+{
+  "version": 1,
+  "state": {
+    "lastNodeId": 17,
+    "lastLinkId": 16,
+    "lastGroupId": 0,
+    "lastRerouteId": 0
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        470.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            1,
+            10
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "city_skyline.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        100.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            2,
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "city_street.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        840.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            3,
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "dancer_pose1.png"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        1210.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            4,
+            8
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "dancer_pose2.png"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": [
+        100.0,
+        1580.0
+      ],
+      "size": [
+        320.0,
+        320.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            5,
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "neon_lights.png"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "ViduStartEndToVideoNode",
+      "pos": [
+        520.0,
+        100.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "*",
+          "link": 1,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
+          "type": "*",
+          "link": 2,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ViduStartEndToVideoNode"
+      },
+      "widgets_values": [
+        "Cinematic drone shot descending from skyline to street level",
+        "viduq1",
+        5,
+        101,
+        "1080p",
+        "high"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "KlingStartEndFrameNode",
+      "pos": [
+        520.0,
+        490.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "start_frame",
+          "type": "*",
+          "link": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
+          "type": "*",
+          "link": 4,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KlingStartEndFrameNode"
+      },
+      "widgets_values": [
+        "Dancer flowing movement between poses",
+        "blurry",
+        0.5,
+        "16:9",
+        "pro mode / 10s duration / kling-v2-1"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "MinimaxImageToVideoNode",
+      "pos": [
+        520.0,
+        750.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "*",
+          "link": 5,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MinimaxImageToVideoNode"
+      },
+      "widgets_values": [
+        "Neon lights pulsing to music beat",
+        "I2V-01-Director",
+        202
+      ]
+    },
+    {
+      "id": 9,
+      "type": "ViduStartEndToVideoNode",
+      "pos": [
+        520.0,
+        230.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "*",
+          "link": 6,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
+          "type": "*",
+          "link": 7,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ViduStartEndToVideoNode"
+      },
+      "widgets_values": [
+        "Camera push through city street revealing dancer",
+        "viduq1",
+        5,
+        303,
+        "1080p",
+        "medium"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "KlingImageToVideoNode",
+      "pos": [
+        520.0,
+        620.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "*",
+          "link": 8,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KlingImageToVideoNode"
+      },
+      "widgets_values": [
+        "Dancer final pose with dramatic lighting",
+        "static",
+        0.5,
+        "16:9",
+        "std mode / 5s duration / kling-v2-1"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "ViduStartEndToVideoNode",
+      "pos": [
+        520.0,
+        360.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "first_frame",
+          "type": "*",
+          "link": 9,
+          "slot_index": 0
+        },
+        {
+          "name": "end_frame",
+          "type": "*",
+          "link": 10,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ViduStartEndToVideoNode"
+      },
+      "widgets_values": [
+        "Neon lights dissolve into city skyline sunrise",
+        "viduq1",
+        5,
+        404,
+        "1080p",
+        "medium"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        100.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 11,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/01",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        490.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 12,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/02",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        750.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 13,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/03",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        230.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 14,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/04",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        620.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 15,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/05",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "SaveVideo",
+      "pos": [
+        920.0,
+        360.0
+      ],
+      "size": [
+        300.0,
+        80.0
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": false,
+        "allow_interaction": true,
+        "horizontal": false,
+        "skip_repeated_outputs": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "*",
+          "link": 16,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "musicvid/06",
+        "mp4",
+        "h264"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 6,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 2,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 6,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 3,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 4,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 5,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 8,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 6,
+      "origin_id": 2,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 7,
+      "origin_id": 3,
+      "origin_slot": 0,
+      "target_id": 9,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 8,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 10,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 9,
+      "origin_id": 5,
+      "origin_slot": 0,
+      "target_id": 11,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 10,
+      "origin_id": 1,
+      "origin_slot": 0,
+      "target_id": 11,
+      "target_slot": 1,
+      "type": "*"
+    },
+    {
+      "id": 11,
+      "origin_id": 6,
+      "origin_slot": 0,
+      "target_id": 12,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 12,
+      "origin_id": 7,
+      "origin_slot": 0,
+      "target_id": 13,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 13,
+      "origin_id": 8,
+      "origin_slot": 0,
+      "target_id": 14,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 14,
+      "origin_id": 9,
+      "origin_slot": 0,
+      "target_id": 15,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 15,
+      "origin_id": 10,
+      "origin_slot": 0,
+      "target_id": 16,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 16,
+      "origin_id": 11,
+      "origin_slot": 0,
+      "target_id": 17,
+      "target_slot": 0,
+      "type": "*"
+    }
+  ],
+  "groups": [],
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  }
+}
