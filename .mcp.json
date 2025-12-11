@@ -4,14 +4,7 @@
       "command": "uv",
       "args": ["--directory", "/home/danyiel/Packages/ComfyUI/comfyui-setup/mcp", "run", "comfy-mcp-server"],
       "env": {
-        "COMFY_URL": "http://localhost:8188",
-        "COMFY_WORKFLOWS_DIR": "/home/danyiel/Packages/ComfyUI/comfyui-setup/workflows",
-        "COMFY_WORKFLOW_JSON_FILE": "/home/danyiel/Packages/ComfyUI/comfyui-setup/workflows/default.json",
-        "PROMPT_NODE_ID": "6",
-        "OUTPUT_NODE_ID": "9",
-        "OUTPUT_MODE": "file",
-        "POLL_TIMEOUT": "120",
-        "POLL_INTERVAL": "2.0"
+        "COMFY_URL": "http://localhost:8188"
       }
     }
   }
