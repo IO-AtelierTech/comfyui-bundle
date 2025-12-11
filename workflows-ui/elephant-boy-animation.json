@@ -10,524 +10,179 @@
     {
       "id": 1,
       "type": "LoadImage",
-      "pos": [
-        100.0,
-        100.0
-      ],
-      "size": [
-        320.0,
-        320.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "pos": [100.0, 100.0],
+      "size": [320.0, 320.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 0,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            1
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "ministarrynight_shelve-leftside.JPG"
-      ]
+      "outputs": [{"name": "IMAGE", "type": "IMAGE", "links": [1], "slot_index": 0}],
+      "properties": {"Node name for S&R": "LoadImage"},
+      "widgets_values": ["ministarrynight_shelve-leftside.JPG", "image"]
     },
     {
       "id": 2,
       "type": "LoadImage",
-      "pos": [
-        550.0,
-        100.0
-      ],
-      "size": [
-        320.0,
-        320.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "pos": [550.0, 100.0],
+      "size": [320.0, 320.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 1,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            2,
-            3
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "ministarrynight_shelve-frontal.JPG"
-      ]
+      "outputs": [{"name": "IMAGE", "type": "IMAGE", "links": [2], "slot_index": 0}],
+      "properties": {"Node name for S&R": "LoadImage"},
+      "widgets_values": ["ministarrynight_shelve-frontal.JPG", "image"]
     },
     {
       "id": 3,
       "type": "LoadImage",
-      "pos": [
-        1000.0,
-        100.0
-      ],
-      "size": [
-        320.0,
-        320.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "pos": [1000.0, 100.0],
+      "size": [320.0, 320.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 2,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            4
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "elephantkid-rightside.JPG"
-      ]
+      "outputs": [{"name": "IMAGE", "type": "IMAGE", "links": [4, 6], "slot_index": 0}],
+      "properties": {"Node name for S&R": "LoadImage"},
+      "widgets_values": ["elephantkid-rightside.JPG", "image"]
     },
     {
       "id": 4,
       "type": "LoadImage",
-      "pos": [
-        100.0,
-        300.0
-      ],
-      "size": [
-        320.0,
-        320.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "pos": [100.0, 500.0],
+      "size": [320.0, 320.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 3,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            5
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "elephantkid-frontal.JPG"
-      ]
+      "outputs": [{"name": "IMAGE", "type": "IMAGE", "links": [7], "slot_index": 0}],
+      "properties": {"Node name for S&R": "LoadImage"},
+      "widgets_values": ["elephantkid-frontal.JPG", "image"]
     },
     {
       "id": 5,
-      "type": "ViduStartEndToVideoNode",
-      "pos": [
-        550.0,
-        300.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "type": "LumaImageToVideo_fal",
+      "pos": [550.0, 500.0],
+      "size": [400.0, 280.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 4,
       "mode": 0,
       "inputs": [
-        {
-          "name": "first_frame",
-          "type": "*",
-          "link": 1,
-          "slot_index": 0
-        },
-        {
-          "name": "end_frame",
-          "type": "*",
-          "link": 2,
-          "slot_index": 1
-        }
+        {"name": "first_image", "type": "IMAGE", "link": 1, "slot_index": 0},
+        {"name": "last_image", "type": "IMAGE", "link": 2, "slot_index": 1}
       ],
       "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            6
-          ],
-          "slot_index": 0
-        }
+        {"name": "video", "type": "VIDEO", "links": [3], "slot_index": 0},
+        {"name": "video_url", "type": "STRING", "links": [], "slot_index": 1}
       ],
-      "properties": {
-        "Node name for S&R": "ViduStartEndToVideoNode"
-      },
+      "properties": {"Node name for S&R": "LumaImageToVideo_fal"},
       "widgets_values": [
-        "viduq1",
-        "Smooth camera arc movement around a miniature Van Gogh Starry Night painting souvenir on a bookshelf, zooming in gradually, painting fills the screen, warm cozy lighting, plastic 3D relief texture of miniature souvenir",
-        5,
-        0,
-        "1080p",
-        "medium"
-      ]
-    },
-    {
-      "id": 6,
-      "type": "MinimaxImageToVideoNode",
-      "pos": [
-        1000.0,
-        300.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "*",
-          "link": 3,
-          "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            7
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "MinimaxImageToVideoNode"
-      },
-      "widgets_values": [
-        "Slow cinematic zoom into bottom left corner of Van Gogh Starry Night miniature painting, grass gains detail and depth, swirling Van Gogh brushstroke texture becomes alive, clay elephant boy gradually appears emerging from the painted grass, maintaining plastic 3D relief texture of miniature souvenir throughout, elephant boy playing saxophone visible at the end",
-        "I2V-01-Director",
+        "Smooth camera arc movement around a miniature Van Gogh Starry Night painting souvenir on a bookshelf, zooming in gradually, warm cozy lighting, plastic 3D relief texture",
+        "16:9",
+        "5s",
+        false,
         0
       ]
     },
     {
+      "id": 6,
+      "type": "VHS_VideoCombine",
+      "pos": [1000.0, 500.0],
+      "size": [300.0, 290.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
+      "order": 5,
+      "mode": 0,
+      "inputs": [{"name": "images", "type": "IMAGE", "link": 3, "slot_index": 0}],
+      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": [], "slot_index": 0}],
+      "properties": {"Node name for S&R": "VHS_VideoCombine"},
+      "widgets_values": ["elephant_boy/01_arc", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
+    },
+    {
       "id": 7,
-      "type": "KlingStartEndFrameNode",
-      "pos": [
-        100.0,
-        500.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "type": "ViduReferenceToVideo_fal",
+      "pos": [100.0, 900.0],
+      "size": [400.0, 320.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 6,
       "mode": 0,
       "inputs": [
-        {
-          "name": "start_frame",
-          "type": "*",
-          "link": 4,
-          "slot_index": 0
-        },
-        {
-          "name": "end_frame",
-          "type": "*",
-          "link": 5,
-          "slot_index": 1
-        }
+        {"name": "reference_image", "type": "IMAGE", "link": 4, "slot_index": 0}
       ],
       "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [
-            8
-          ],
-          "slot_index": 0
-        }
+        {"name": "video", "type": "VIDEO", "links": [5], "slot_index": 0},
+        {"name": "video_url", "type": "STRING", "links": [], "slot_index": 1}
       ],
-      "properties": {
-        "Node name for S&R": "KlingStartEndFrameNode"
-      },
+      "properties": {"Node name for S&R": "ViduReferenceToVideo_fal"},
       "widgets_values": [
-        "Clay elephant boy turns head smoothly from right side profile to face camera directly, warm friendly smile, playing saxophone with gentle swaying motion, musical notes with handwritten sketch texture flow from saxophone bell, maintain clay plasticine stop-motion texture throughout, Van Gogh swirling painted grass background, warm lighting",
-        "realistic skin, smooth surface, CGI, 3D render, photorealistic, plastic sheen, glossy, digital art, blurry, low quality, morphing artifacts",
-        0.5,
+        "Slow cinematic zoom into Van Gogh Starry Night miniature painting grass area, clay elephant boy figurine gradually appears emerging from the painted grass, the elephant boy is a vintage ceramic figurine wearing grey elephant costume with big round ears, playing golden saxophone, maintain clay plasticine stop-motion texture, Van Gogh swirling brushstroke grass background, warm lighting",
         "16:9",
-        "pro mode / 10s duration / kling-v2-1"
+        "medium",
+        false,
+        0
       ]
     },
     {
       "id": 8,
-      "type": "SaveVideo",
-      "pos": [
-        550.0,
-        500.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "type": "VHS_VideoCombine",
+      "pos": [550.0, 900.0],
+      "size": [300.0, 290.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 7,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "video",
-          "type": "*",
-          "link": 6,
-          "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveVideo"
-      },
-      "widgets_values": [
-        "elephant_boy/01_arc",
-        "mp4",
-        "h264"
-      ]
+      "inputs": [{"name": "images", "type": "IMAGE", "link": 5, "slot_index": 0}],
+      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": [], "slot_index": 0}],
+      "properties": {"Node name for S&R": "VHS_VideoCombine"},
+      "widgets_values": ["elephant_boy/02_emerge", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
     },
     {
       "id": 9,
-      "type": "SaveVideo",
-      "pos": [
-        1000.0,
-        500.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "type": "LumaImageToVideo_fal",
+      "pos": [1000.0, 900.0],
+      "size": [400.0, 280.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 8,
       "mode": 0,
       "inputs": [
-        {
-          "name": "video",
-          "type": "*",
-          "link": 7,
-          "slot_index": 0
-        }
+        {"name": "first_image", "type": "IMAGE", "link": 6, "slot_index": 0},
+        {"name": "last_image", "type": "IMAGE", "link": 7, "slot_index": 1}
       ],
       "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [],
-          "slot_index": 0
-        }
+        {"name": "video", "type": "VIDEO", "links": [8], "slot_index": 0},
+        {"name": "video_url", "type": "STRING", "links": [], "slot_index": 1}
       ],
-      "properties": {
-        "Node name for S&R": "SaveVideo"
-      },
+      "properties": {"Node name for S&R": "LumaImageToVideo_fal"},
       "widgets_values": [
-        "elephant_boy/02_zoom",
-        "mp4",
-        "h264"
+        "Clay elephant boy figurine slowly rotates toward the camera, transitioning from side profile to facing viewer directly, warm friendly smile appears as he turns to greet the audience, continues playing saxophone with gentle swaying, vintage ceramic figurine texture, Van Gogh swirling painted grass background, warm cozy lighting",
+        "16:9",
+        "5s",
+        false,
+        0
       ]
     },
     {
       "id": 10,
-      "type": "SaveVideo",
-      "pos": [
-        100.0,
-        700.0
-      ],
-      "size": [
-        300.0,
-        80.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
+      "type": "VHS_VideoCombine",
+      "pos": [100.0, 1300.0],
+      "size": [300.0, 290.0],
+      "flags": {"collapsed": false, "pinned": false, "allow_interaction": true, "horizontal": false, "skip_repeated_outputs": false},
       "order": 9,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "video",
-          "type": "*",
-          "link": 8,
-          "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SaveVideo"
-      },
-      "widgets_values": [
-        "elephant_boy/03_elephant",
-        "mp4",
-        "h264"
-      ]
+      "inputs": [{"name": "images", "type": "IMAGE", "link": 8, "slot_index": 0}],
+      "outputs": [{"name": "Filenames", "type": "VHS_FILENAMES", "links": [], "slot_index": 0}],
+      "properties": {"Node name for S&R": "VHS_VideoCombine"},
+      "widgets_values": ["elephant_boy/03_turn", "video/h264-mp4", false, 24, "default", "image", true, true, "", null, null]
     }
   ],
   "links": [
-    {
-      "id": 1,
-      "origin_id": 1,
-      "origin_slot": 0,
-      "target_id": 5,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 2,
-      "origin_id": 2,
-      "origin_slot": 0,
-      "target_id": 5,
-      "target_slot": 1,
-      "type": "*"
-    },
-    {
-      "id": 3,
-      "origin_id": 2,
-      "origin_slot": 0,
-      "target_id": 6,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 4,
-      "origin_id": 3,
-      "origin_slot": 0,
-      "target_id": 7,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 5,
-      "origin_id": 4,
-      "origin_slot": 0,
-      "target_id": 7,
-      "target_slot": 1,
-      "type": "*"
-    },
-    {
-      "id": 6,
-      "origin_id": 5,
-      "origin_slot": 0,
-      "target_id": 8,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 7,
-      "origin_id": 6,
-      "origin_slot": 0,
-      "target_id": 9,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 8,
-      "origin_id": 7,
-      "origin_slot": 0,
-      "target_id": 10,
-      "target_slot": 0,
-      "type": "*"
-    }
+    {"id": 1, "origin_id": 1, "origin_slot": 0, "target_id": 5, "target_slot": 0, "type": "IMAGE"},
+    {"id": 2, "origin_id": 2, "origin_slot": 0, "target_id": 5, "target_slot": 1, "type": "IMAGE"},
+    {"id": 3, "origin_id": 5, "origin_slot": 0, "target_id": 6, "target_slot": 0, "type": "VIDEO"},
+    {"id": 4, "origin_id": 3, "origin_slot": 0, "target_id": 7, "target_slot": 0, "type": "IMAGE"},
+    {"id": 5, "origin_id": 7, "origin_slot": 0, "target_id": 8, "target_slot": 0, "type": "VIDEO"},
+    {"id": 6, "origin_id": 3, "origin_slot": 0, "target_id": 9, "target_slot": 0, "type": "IMAGE"},
+    {"id": 7, "origin_id": 4, "origin_slot": 0, "target_id": 9, "target_slot": 1, "type": "IMAGE"},
+    {"id": 8, "origin_id": 9, "origin_slot": 0, "target_id": 10, "target_slot": 0, "type": "VIDEO"}
   ],
   "groups": [],
-  "extra": {
-    "ds": {
-      "scale": 1,
-      "offset": [
-        0,
-        0
-      ]
-    }
-  }
+  "extra": {"ds": {"scale": 0.8, "offset": [0, 0]}}
 }
