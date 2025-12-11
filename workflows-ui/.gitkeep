@@ -1,0 +1,11 @@
+# Workflow JSON exports go here
+#
+# To export a workflow from ComfyUI:
+# 1. Create your workflow using fal.ai nodes
+# 2. Click Settings (gear icon)
+# 3. Select "Export (API Format)"
+# 4. Save as default.json in this directory
+#
+# Then update .mcp.json with the correct node IDs:
+# - PROMPT_NODE_ID: The CLIPTextEncode or text input node
+# - OUTPUT_NODE_ID: The SaveImage or final output node
