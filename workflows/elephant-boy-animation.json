@@ -1,7 +1,7 @@
 {
   "version": 1,
   "state": {
-    "lastNodeId": 10,
+    "lastNodeId": 9,
     "lastLinkId": 7,
     "lastGroupId": 0,
     "lastRerouteId": 0
@@ -124,45 +124,9 @@
     },
     {
       "id": 4,
-      "type": "LoadImage",
-      "pos": [
-        100.0,
-        300.0
-      ],
-      "size": [
-        320.0,
-        320.0
-      ],
-      "flags": {
-        "collapsed": false,
-        "pinned": false,
-        "allow_interaction": true,
-        "horizontal": false,
-        "skip_repeated_outputs": false
-      },
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "*",
-          "links": [],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "elephantkid-frontal.jpg"
-      ]
-    },
-    {
-      "id": 5,
       "type": "ViduStartEndToVideoNode",
       "pos": [
-        550.0,
+        100.0,
         300.0
       ],
       "size": [
@@ -176,7 +140,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -215,10 +179,10 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "type": "MinimaxImageToVideoNode",
       "pos": [
-        1000.0,
+        550.0,
         300.0
       ],
       "size": [
@@ -232,7 +196,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -262,11 +226,11 @@
       ]
     },
     {
-      "id": 7,
+      "id": 6,
       "type": "KlingImage2VideoNode",
       "pos": [
-        100.0,
-        500.0
+        1000.0,
+        300.0
       ],
       "size": [
         300.0,
@@ -279,7 +243,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -313,10 +277,10 @@
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "type": "SaveVideo",
       "pos": [
-        550.0,
+        100.0,
         500.0
       ],
       "size": [
@@ -330,7 +294,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -358,10 +322,10 @@
       ]
     },
     {
-      "id": 9,
+      "id": 8,
       "type": "SaveVideo",
       "pos": [
-        1000.0,
+        550.0,
         500.0
       ],
       "size": [
@@ -375,7 +339,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -403,11 +367,11 @@
       ]
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "SaveVideo",
       "pos": [
-        100.0,
-        700.0
+        1000.0,
+        500.0
       ],
       "size": [
         300.0,
@@ -420,7 +384,7 @@
         "horizontal": false,
         "skip_repeated_outputs": false
       },
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -453,7 +417,7 @@
       "id": 1,
       "origin_id": 1,
       "origin_slot": 0,
-      "target_id": 5,
+      "target_id": 4,
       "target_slot": 0,
       "type": "*"
     },
@@ -461,7 +425,7 @@
       "id": 2,
       "origin_id": 2,
       "origin_slot": 0,
-      "target_id": 5,
+      "target_id": 4,
       "target_slot": 1,
       "type": "*"
     },
@@ -469,7 +433,7 @@
       "id": 3,
       "origin_id": 2,
       "origin_slot": 0,
-      "target_id": 6,
+      "target_id": 5,
       "target_slot": 0,
       "type": "*"
     },
@@ -477,12 +441,20 @@
       "id": 4,
       "origin_id": 3,
       "origin_slot": 0,
-      "target_id": 7,
+      "target_id": 6,
       "target_slot": 0,
       "type": "*"
     },
     {
       "id": 5,
+      "origin_id": 4,
+      "origin_slot": 0,
+      "target_id": 7,
+      "target_slot": 0,
+      "type": "*"
+    },
+    {
+      "id": 6,
       "origin_id": 5,
       "origin_slot": 0,
       "target_id": 8,
@@ -490,18 +462,10 @@
       "type": "*"
     },
     {
-      "id": 6,
+      "id": 7,
       "origin_id": 6,
       "origin_slot": 0,
       "target_id": 9,
-      "target_slot": 0,
-      "type": "*"
-    },
-    {
-      "id": 7,
-      "origin_id": 7,
-      "origin_slot": 0,
-      "target_id": 10,
       "target_slot": 0,
       "type": "*"
     }
