@@ -1,157 +1,165 @@
-# ComfyUI Setup
+# ComfyUI Bundle - Development Repository
 
-A containerized ComfyUI setup with fal.ai integration, community plugins, and MCP server support for Claude Code.
+> **Internal development repo for IO-AtelierTech's ComfyUI Docker bundle**
 
-## Features
+This repository builds the Docker image published to `ioateliertech/comfyui-bundle`. It's a one-command repackage of ComfyUI with curated plugins tailored for our internal creative workflows.
 
-- **Dockerized ComfyUI** - CPU-only setup, no local GPU required
-- **fal.ai Integration** - Use cloud GPUs for inference via fal.ai API
-- **Pre-configured Plugins** - Community plugins ready to use on startup
-- **MCP Server** - Connect Claude Code to ComfyUI for AI-assisted workflows
-- **GNOME Desktop Integration** - Pin to dock, launch with one click
+## Purpose
 
-## Quick Start
+**For IO-AtelierTech developers only.** End users should use [comfyui-template](https://github.com/io-ateliertech/comfyui-template) instead.
+
+This repo:
+- Builds the Docker image with all plugins pre-installed
+- Manages plugin submodules and upstream updates
+- Publishes to Docker Hub via CI/CD
+
+## Architecture
+
+```
+comfyui-bundle (this repo)          → Docker Hub: ioateliertech/comfyui-bundle
+    │
+    ├── comfyui/                    → Upstream: comfyanonymous/ComfyUI
+    ├── plugins/genai-connectors/   → io-ateliertech/genai-connectors
+    ├── plugins/comfyui-video-utils/→ io-ateliertech/comfyui-video-utils
+    └── plugins/[community]/        → Various upstream plugins
+
+comfyui-mcp (separate repo)         → PyPI: io-ateliertech-comfyui-mcp
+comfyui-template (separate repo)    → End-user template (docker-compose + Justfile)
+```
+
+## Quick Start (Development)
 
 ```bash
-# Clone the repository with submodules
-git clone --recursive https://github.com/YOUR_USERNAME/comfyui-setup.git
-cd comfyui-setup
+# Clone with all submodules
+git clone --recursive https://github.com/io-ateliertech/comfyui-bundle.git
+cd comfyui-bundle
 
-# Run setup
-./scripts/setup.sh
-
-# Add your fal.ai API key
-nano .env  # Add: FAL_KEY=your_key_here
+# Add your API keys
+cp .env.example .env
+nano .env  # Add FAL_KEY, etc.
 
 # Build and start
 cd docker && docker compose build
-cd .. && ./scripts/comfyui-launcher.sh
+docker compose up -d
 ```
 
 ## Repository Structure
 
 ```
-comfyui-setup/
-├── comfyui/                    # Official ComfyUI (git submodule)
-├── mcp/                        # MCP server fork (git submodule) [optional]
-├── plugins/                    # Community plugins (git submodules)
-│   ├── ComfyUI-fal-Connector/  # fal.ai cloud inference
-│   ├── ComfyUI-TextOverlay/    # Text overlay on images
-│   └── ComfyUI-Custom-Scripts/ # Quality-of-life improvements
+comfyui-bundle/
+├── comfyui/                      # ComfyUI core (upstream submodule)
+├── plugins/                      # Plugin ecosystem
+│   ├── genai-connectors/         # Multi-vendor AI connectors (ours)
+│   ├── comfyui-video-utils/      # Video utility nodes (ours)
+│   ├── ComfyUI-FFmpeg/           # FFmpeg integration (upstream)
+│   ├── ComfyUI-TextOverlay/      # Text overlays (upstream)
+│   └── ComfyUI-Custom-Scripts/   # UI improvements (upstream)
 ├── docker/
-│   ├── Dockerfile              # Single image with all plugins
-│   └── docker-compose.yml      # Container orchestration
-├── scripts/
-│   ├── setup.sh                # One-time setup script
-│   └── comfyui-launcher.sh     # Desktop launcher
-├── assets/
-│   └── comfyui.png             # App icon
-├── workflows/                  # Store workflow JSON exports
-├── data/                       # Persistent data (gitignored)
-│   ├── output/                 # Generated images
-│   ├── input/                  # Input images
-│   └── models/                 # Model files
-├── .mcp.json                   # MCP server configuration
-├── .env                        # Environment variables (gitignored)
-└── README.md
+│   ├── Dockerfile                # Production image build
+│   └── docker-compose.yml        # Development compose
+├── workflows-api/                # API format workflows
+├── workflows-ui/                 # UI format workflows
+├── data/                         # Persistent data (gitignored)
+├── .env.example                  # Environment template
+└── CLAUDE.md                     # AI assistant context
 ```
 
 ## Included Plugins
 
-| Plugin | Description |
-|--------|-------------|
-| [ComfyUI-fal-Connector](https://github.com/badayvedat/ComfyUI-fal-Connector) | Use fal.ai cloud GPUs for inference |
-| [ComfyUI-TextOverlay](https://github.com/Munkyfoot/ComfyUI-TextOverlay) | Add text overlays to generated images |
-| [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) | Quality-of-life improvements for the UI |
+| Plugin | Ownership | Purpose |
+|--------|-----------|---------|
+| [genai-connectors](https://github.com/io-ateliertech/genai-connectors) | Ours | Multi-vendor AI inference (fal.ai, Replicate, etc.) |
+| [comfyui-video-utils](https://github.com/io-ateliertech/comfyui-video-utils) | Ours | Video processing and FFmpeg integration |
+| [ComfyUI-FFmpeg](https://github.com/MoonHugo/ComfyUI-FFmpeg) | Upstream | Video encoding/decoding |
+| [ComfyUI-TextOverlay](https://github.com/Munkyfoot/ComfyUI-TextOverlay) | Upstream | Text overlays |
+| [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) | Upstream | UI enhancements |
 
-## Configuration
+## Development Workflow
 
-### fal.ai API Key
-
-1. Create an account at [fal.ai](https://fal.ai)
-2. Get your API key from the dashboard
-3. Add to `.env`: `FAL_KEY=your_key_here`
-
-### MCP Server for Claude Code
-
-The setup creates `.mcp.json` for Claude Code integration. To use:
-
-1. Create a workflow in ComfyUI using fal.ai nodes
-2. Export workflow: Settings → Export (API Format)
-3. Save to `workflows/default.json`
-4. Update `.mcp.json` with correct node IDs:
-   - `PROMPT_NODE_ID`: The text input node ID
-   - `OUTPUT_NODE_ID`: The final image output node ID
-
-### GNOME Desktop Integration
-
-After running `setup.sh`:
-1. Press Super key (Activities)
-2. Search for "ComfyUI"
-3. Right-click → "Add to Favorites" to pin to dock
-
-## Commands
+### Building the Docker Image
 
 ```bash
-# Start ComfyUI
-./scripts/comfyui-launcher.sh
+# Build image
+cd docker && docker compose build
 
-# Or manually with docker
-cd docker && docker compose up -d
+# Tag for Docker Hub
+docker tag comfyui-bundle:latest ioateliertech/comfyui-bundle:latest
+docker tag comfyui-bundle:latest ioateliertech/comfyui-bundle:v1.0.0
 
-# Stop ComfyUI
-cd docker && docker compose down
-
-# View logs
-cd docker && docker compose logs -f
-
-# Rebuild after updates
-cd docker && docker compose build --no-cache
+# Push to Docker Hub
+docker push ioateliertech/comfyui-bundle:latest
+docker push ioateliertech/comfyui-bundle:v1.0.0
 ```
 
-## Updating
+### Updating Upstream Dependencies
 
 ```bash
-# Pull latest changes
-git pull
+# Update ComfyUI core
+cd comfyui && git pull origin master && cd ..
+
+# Update all upstream plugins
 git submodule update --remote --merge
 
-# Rebuild container
+# Update our plugins
+cd plugins/genai-connectors && git pull origin main && cd ../..
+cd plugins/comfyui-video-utils && git pull origin main && cd ../..
+
+# Rebuild
 cd docker && docker compose build
 ```
 
-## Adding More Plugins
-
-To add a new plugin:
+### Adding New Plugins
 
 ```bash
-# Add as submodule
-git submodule add https://github.com/author/ComfyUI-PluginName.git plugins/ComfyUI-PluginName
+# Add upstream plugin as submodule
+git submodule add https://github.com/author/ComfyUI-Plugin.git plugins/ComfyUI-Plugin
 
-# Rebuild container
+# Update Dockerfile to copy it
+# Rebuild and test
 cd docker && docker compose build
 ```
 
-## Troubleshooting
+### Testing Changes
 
-### Container won't start
 ```bash
-cd docker && docker compose logs
+# Start development environment
+cd docker && docker compose up -d
+
+# View logs
+docker compose logs -f
+
+# Access ComfyUI
+open http://localhost:8188
+
+# Stop
+docker compose down
 ```
 
-### Plugins not loading
-Check that plugins are properly copied:
+## Publishing
+
+### Docker Hub
+
+Automated builds via GitHub Actions (see `.github/workflows/docker-publish.yml`):
+- Push to `main` → `ioateliertech/comfyui-bundle:latest`
+- Git tag `v*` → `ioateliertech/comfyui-bundle:vX.Y.Z`
+
+### Manual Publish
+
 ```bash
-docker compose exec comfyui ls /app/custom_nodes/
+docker login
+docker push ioateliertech/comfyui-bundle:latest
+docker push ioateliertech/comfyui-bundle:v1.0.0
 ```
 
-### MCP server not connecting
-1. Ensure ComfyUI is running at http://localhost:8188
-2. Check `.mcp.json` has correct paths
-3. Verify `comfy-mcp-server` is installed: `which comfy-mcp-server`
+## Related Repositories
+
+- [comfyui-mcp](https://github.com/io-ateliertech/comfyui-mcp) - MCP server (PyPI: `io-ateliertech-comfyui-mcp`)
+- [comfyui-template](https://github.com/io-ateliertech/comfyui-template) - End-user template
+- [genai-connectors](https://github.com/io-ateliertech/genai-connectors) - Multi-vendor AI connectors
+- [comfyui-video-utils](https://github.com/io-ateliertech/comfyui-video-utils) - Video utility nodes
 
 ## License
 
-- ComfyUI: GPL-3.0
-- Plugins: See individual plugin licenses
-- This setup repository: MIT
+- ComfyUI: GPL-3.0 (upstream)
+- IO-AtelierTech plugins: MIT
+- This bundle repository: MIT
