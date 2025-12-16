@@ -19,11 +19,14 @@ This repo:
 comfyui-bundle (this repo)          → Docker Hub: ioateliertech/comfyui-bundle
     │
     ├── comfyui/                    → Upstream: comfyanonymous/ComfyUI
-    ├── plugins/genai-connectors/   → io-ateliertech/genai-connectors
-    ├── plugins/comfyui-video-utils/→ io-ateliertech/comfyui-video-utils
+    ├── plugins/genai-connectors/   → io-ateliertech/comfyui-genai-connectors
+    ├── plugins/video-utils/        → io-ateliertech/comfyui-video-utils
     └── plugins/[community]/        → Various upstream plugins
 
-comfyui-mcp (separate repo)         → PyPI: io-ateliertech-comfyui-mcp
+comfyui-mcp (separate repo)         → PyPI: comfyui-easy-mcp
+                                      ✅ Schema-validated workflows (v0.4)
+                                      🎨 Beautiful graph layouts (NetworkX)
+
 comfyui-template (separate repo)    → End-user template (docker-compose + Justfile)
 ```
 
@@ -153,9 +156,11 @@ docker push ioateliertech/comfyui-bundle:v1.0.0
 
 ## Related Repositories
 
-- [comfyui-mcp](https://github.com/io-ateliertech/comfyui-mcp) - MCP server (PyPI: `io-ateliertech-comfyui-mcp`)
+- [comfyui-mcp](https://github.com/io-ateliertech/comfyui-mcp) - MCP server (PyPI: `comfyui-easy-mcp`)
+  - ✅ Schema-validated workflows (ComfyUI v0.4)
+  - 🎨 Auto-layout with NetworkX for untangled graphs
 - [comfyui-template](https://github.com/io-ateliertech/comfyui-template) - End-user template
-- [genai-connectors](https://github.com/io-ateliertech/genai-connectors) - Multi-vendor AI connectors
+- [comfyui-genai-connectors](https://github.com/io-ateliertech/comfyui-genai-connectors) - Multi-vendor AI connectors
 - [comfyui-video-utils](https://github.com/io-ateliertech/comfyui-video-utils) - Video utility nodes
 
 ## License
