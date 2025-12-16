@@ -24,12 +24,12 @@ RUN pip install --no-cache-dir -r /tmp/comfyui-requirements.txt
 
 # Copy plugin requirements files (only for plugins that have them)
 # Each COPY creates a layer - changes to plugin code won't invalidate these
-COPY plugins/ComfyUI-fal-Connector/requirements.txt /tmp/fal-connector-requirements.txt
+COPY plugins/genai-connectors/requirements.txt /tmp/genai-connectors-requirements.txt
 COPY plugins/ComfyUI-FFmpeg/requirements.txt /tmp/ffmpeg-requirements.txt
 
 # Install all plugin requirements
 RUN pip install --no-cache-dir \
-    -r /tmp/fal-connector-requirements.txt \
+    -r /tmp/genai-connectors-requirements.txt \
     -r /tmp/ffmpeg-requirements.txt \
     || true
 

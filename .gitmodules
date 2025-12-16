@@ -7,12 +7,12 @@
 [submodule "plugins/ComfyUI-Custom-Scripts"]
 	path = plugins/ComfyUI-Custom-Scripts
 	url = https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
-[submodule "mcp"]
-	path = mcp
-	url = https://github.com/DanEscher98/comfy-mcp-server.git
 [submodule "plugins/ComfyUI-FFmpeg"]
 	path = plugins/ComfyUI-FFmpeg
 	url = https://github.com/MoonHugo/ComfyUI-FFmpeg.git
-[submodule "plugins/ComfyUI-fal-Connector"]
-	path = plugins/ComfyUI-fal-Connector
-	url = https://github.com/DanEscher98/ComfyUI-fal-Connector.git
+[submodule "plugins/genai-connectors"]
+	path = plugins/genai-connectors
+	url = https://github.com/IO-AtelierTech/comfyui-genai-connectors.git
+[submodule "plugins/video-utils"]
+	path = plugins/video-utils
+	url = https://github.com/IO-AtelierTech/comfyui-video-utils.git
