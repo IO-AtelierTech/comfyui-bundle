@@ -6,7 +6,7 @@ This repository builds the Docker image published to `ioateliertech/comfyui-bund
 
 ## Purpose
 
-**For IO-AtelierTech developers only.** End users should use [comfyui-template](https://github.com/io-ateliertech/comfyui-template) instead.
+**For IO-AtelierTech developers.** End users should use [comfyui-template](https://github.com/io-ateliertech/comfyui-template) instead.
 
 This repo:
 - Builds the Docker image with all plugins pre-installed
